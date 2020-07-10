@@ -24,13 +24,18 @@ struct CurrencyViewModel: Hashable {
     }
     
     var flagEmoji: String {
-        String.flagDictionary[exchangeRate.currency] ?? "🏳️"
+        .emojiFlag(for: exchangeRate.currency)
     }
     
 }
 
-private extension String {
-    static let flagDictionary: [String: String] = [
+extension String {
+    
+    static func emojiFlag(for country: String) -> String {
+        String.flagDictionary[country] ?? "🏳️"
+    }
+    
+    private static let flagDictionary: [String: String] = [
         "CAD": "🇨🇦",
         "DKK": "🇩🇰",
         "GBP": "🇬🇧",

@@ -12,6 +12,7 @@ class CurrencyListViewModel: ObservableObject {
     private let currencyProvider: CurrencyProvider
     
     @Published var currencyViewModels = [CurrencyViewModel]()
+    @Published var currencyHeaderViweModel: CurrencyHeaderRepresentable = LoadingCurrency()
     
     init(currencyProvider: CurrencyProvider = CurrencyService()) {
         self.currencyProvider = currencyProvider
@@ -24,6 +25,7 @@ class CurrencyListViewModel: ObservableObject {
             print(error)
         }, receiveValue: { [weak self] currencyConversion in
             guard let self = self else { return }
+            self.currencyHeaderViweModel = CurrencyHeaderViewModel(currencyConversion)
             self.currencyViewModels = currencyConversion.exchangeRates.map(CurrencyViewModel.init)
         })
     }

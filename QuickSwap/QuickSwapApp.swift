@@ -18,6 +18,6 @@ struct QuickSwapApp: App {
 
 struct QuickSwapApp_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyHeaderView()
+        CurrencyListView()
     }
 }

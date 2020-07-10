@@ -10,13 +10,18 @@ import SwiftUI
 struct CurrencyHeaderView: View {
     
     @State private var value: String = "10,36"
+    private var viewModel: CurrencyHeaderRepresentable
+    
+    init(_ representable: CurrencyHeaderRepresentable) {
+        self.viewModel = representable
+    }
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("PLN")
+                Text(viewModel.name)
                     .font(.title)
-                Text("2018-04-08")
+                Text(viewModel.date)
                     .font(.caption)
             }
             Spacer()
@@ -24,7 +29,7 @@ struct CurrencyHeaderView: View {
                 .multilineTextAlignment(.trailing)
                 .font(.title)
                 .padding(.trailing, 10)
-            Text("🇵🇱")
+            Text(viewModel.emojiFlag)
                 .font(.title)
                 .padding(.all, 4)
                 .background(Color.blue)
@@ -39,6 +44,6 @@ struct CurrencyHeaderView: View {
 
 struct CurrencyHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyHeaderView()
+        CurrencyHeaderView(LoadingCurrency())
     }
 }
