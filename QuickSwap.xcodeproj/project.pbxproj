@@ -17,6 +17,7 @@
 		8A95ED1424B6B35C000A2CC5 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1324B6B35C000A2CC5 /* Currency.swift */; };
 		8A95ED1624B88FD1000A2CC5 /* CurrencyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */; };
 		8A95ED1824B8A3A0000A2CC5 /* CurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1724B8A3A0000A2CC5 /* CurrencyListView.swift */; };
+		8A95ED1A24B8B37A000A2CC5 /* CurrencyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1924B8B37A000A2CC5 /* CurrencyHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8A95ED1324B6B35C000A2CC5 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRowView.swift; sourceTree = "<group>"; };
 		8A95ED1724B8A3A0000A2CC5 /* CurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListView.swift; sourceTree = "<group>"; };
+		8A95ED1924B8B37A000A2CC5 /* CurrencyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				8A95ED1324B6B35C000A2CC5 /* Currency.swift */,
 				8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */,
 				8A95ED1724B8A3A0000A2CC5 /* CurrencyListView.swift */,
+				8A95ED1924B8B37A000A2CC5 /* CurrencyHeaderView.swift */,
 			);
 			path = Currency;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				8A95ED1124B6AB08000A2CC5 /* CurrencySwapView.swift in Sources */,
 				8A95ECE824B6AAD8000A2CC5 /* ContentView.swift in Sources */,
 				8A95ECE624B6AAD8000A2CC5 /* QuickSwapApp.swift in Sources */,
+				8A95ED1A24B8B37A000A2CC5 /* CurrencyHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

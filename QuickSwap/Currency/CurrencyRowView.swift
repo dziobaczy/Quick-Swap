@@ -12,7 +12,7 @@ struct CurrencyRowView: View {
         HStack(alignment: .center) {
             Text("🇵🇱")
                 .font(.title)
-                .padding(.all, 12)
+                .padding(.all, 8)
                 .background(Color.black.opacity(0.1))
                 .clipShape(Circle())
             VStack(alignment: .leading) {

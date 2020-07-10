@@ -11,7 +11,7 @@ struct CurrencyListView: View {
     var body: some View {
         NavigationView {
             List {
-                CurrencySwapView()
+                CurrencyHeaderView()
                     .padding(.bottom, 35)
                     .padding(.top, 15)
                 ForEach(0..<10) { i in

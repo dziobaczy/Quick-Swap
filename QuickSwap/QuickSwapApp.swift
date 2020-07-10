@@ -11,7 +11,13 @@ import SwiftUI
 struct QuickSwapApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CurrencyHeaderView()
         }
+    }
+}
+
+struct QuickSwapApp_Previews: PreviewProvider {
+    static var previews: some View {
+        CurrencyHeaderView()
     }
 }
