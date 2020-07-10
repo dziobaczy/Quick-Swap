@@ -13,7 +13,7 @@ struct CurrencyRowView: View {
     
     var body: some View {
         HStack(alignment: .center) {
-            Text("🇵🇱")
+            Text(viewModel.flagEmoji)
                 .font(.title)
                 .padding(.all, 8)
                 .background(Color.black.opacity(0.1))

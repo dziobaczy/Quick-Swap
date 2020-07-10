@@ -30,6 +30,10 @@ struct CurrencyHeaderView: View {
                 .background(Color.blue)
                 .clipShape(Circle())
         }
+        .padding(.bottom, 35)
+        .padding(.top, 15)
+        .padding(.horizontal, 18)
+        .background(Color.white)
     }
 }
 
