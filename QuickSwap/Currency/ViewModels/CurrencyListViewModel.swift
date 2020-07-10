@@ -20,15 +20,19 @@ class CurrencyListViewModel: ObservableObject {
     
     var cancellable: AnyCancellable?
     
-    func fetchCurrencies() {
-        cancellable = currencyProvider.fetchCurrencies(for: "PLN").sink(receiveCompletion: { error in
-            print(error)
+    func fetchCurrencies(for currency: Currency = "PLN") {
+        cancellable = currencyProvider.fetchCurrencies(for: currency.uppercased()).sink(receiveCompletion: { completion in
+            print(completion)
         }, receiveValue: { [weak self] currencyConversion in
             guard let self = self else { return }
             self.currencyHeaderViweModel = CurrencyHeaderViewModel(currencyConversion)
-            
             self.currencyViewModels = currencyConversion.exchangeRates.sorted().map(CurrencyViewModel.init)
         })
+    }
+    
+    func changeHeader(to viewModel: CurrencyViewModel) {
+        currencyHeaderViweModel = LoadingCurrency()
+        fetchCurrencies(for: viewModel.name)
     }
     
 }

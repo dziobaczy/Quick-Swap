@@ -16,13 +16,17 @@ struct CurrencyListView: View {
         NavigationView {
             List {
                 Section(header: CurrencyHeaderView(viewModel.currencyHeaderViweModel)) {
-                    ForEach(viewModel.currencyViewModels, id: \.self) { viewModel in
+                    ForEach(viewModel.currencyViewModels) { viewModel in
                         CurrencyRowView(viewModel: viewModel)
                             .padding(.all, 12)
+                            .onTapGesture {
+                                self.viewModel.changeHeader(to: viewModel)
+                            }
                     }
                 }
                 .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
+            .animation(.default)
             .navigationBarTitle("Currencies")
             .onAppear {
                 viewModel.fetchCurrencies()

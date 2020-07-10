@@ -7,9 +7,13 @@
 
 import Combine
 
-struct CurrencyViewModel: Hashable {
+struct CurrencyViewModel: Identifiable {
     
     private let exchangeRate: ExchangeRate
+    
+    var id: String {
+        name + rate + flagEmoji
+    }
     
     init(_ exchangeRate: ExchangeRate) {
         self.exchangeRate = exchangeRate
