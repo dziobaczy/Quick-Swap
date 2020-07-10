@@ -15,6 +15,7 @@
 		8A95ED0324B6AADA000A2CC5 /* QuickSwapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED0224B6AADA000A2CC5 /* QuickSwapUITests.swift */; };
 		8A95ED1124B6AB08000A2CC5 /* CurrencySwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1024B6AB08000A2CC5 /* CurrencySwapView.swift */; };
 		8A95ED1424B6B35C000A2CC5 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1324B6B35C000A2CC5 /* Currency.swift */; };
+		8A95ED1624B88FD1000A2CC5 /* CurrencyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8A95ED0424B6AADA000A2CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A95ED1024B6AB08000A2CC5 /* CurrencySwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySwapView.swift; sourceTree = "<group>"; };
 		8A95ED1324B6B35C000A2CC5 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				8A95ED1024B6AB08000A2CC5 /* CurrencySwapView.swift */,
 				8A95ED1324B6B35C000A2CC5 /* Currency.swift */,
+				8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */,
 			);
 			path = Currency;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A95ED1424B6B35C000A2CC5 /* Currency.swift in Sources */,
+				8A95ED1624B88FD1000A2CC5 /* CurrencyRowView.swift in Sources */,
 				8A95ED1124B6AB08000A2CC5 /* CurrencySwapView.swift in Sources */,
 				8A95ECE824B6AAD8000A2CC5 /* ContentView.swift in Sources */,
 				8A95ECE624B6AAD8000A2CC5 /* QuickSwapApp.swift in Sources */,
