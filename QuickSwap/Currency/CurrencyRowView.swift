@@ -10,6 +10,7 @@ import SwiftUI
 struct CurrencyRowView: View {
     
     @State var viewModel: CurrencyViewModel
+    @EnvironmentObject var userDetails: UserDetails
     
     var body: some View {
         HStack(alignment: .center) {
@@ -22,7 +23,7 @@ struct CurrencyRowView: View {
                 Text(viewModel.name)
                     .font(.callout)
                     .bold()
-                Text(viewModel.rate)
+                Text(String(format: "%.2f", viewModel.rate * userDetails.money))
             }
             .padding(.vertical, 4)
             .padding(.leading, 8)

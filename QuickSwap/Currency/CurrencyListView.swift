@@ -10,7 +10,12 @@ import Combine
 
 struct CurrencyListView: View {
     
-    @ObservedObject private var viewModel = CurrencyListViewModel()
+    @ObservedObject private var viewModel: CurrencyListViewModel
+    @EnvironmentObject var userDetails: UserDetails
+    
+    init(_ currencyListViewModel: CurrencyListViewModel = CurrencyListViewModel()) {
+        self.viewModel = currencyListViewModel
+    }
     
     var body: some View {
         NavigationView {

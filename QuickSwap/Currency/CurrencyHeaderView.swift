@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CurrencyHeaderView: View {
     
-    @State private var value: String = "10,36"
+    @EnvironmentObject var userDetails: UserDetails
+    
     private var viewModel: CurrencyHeaderRepresentable
     
     init(_ representable: CurrencyHeaderRepresentable) {
@@ -25,7 +26,7 @@ struct CurrencyHeaderView: View {
                     .font(.caption)
             }
             Spacer()
-            TextField("Enter a value", text: $value)
+            TextField("Enter a value", text: $userDetails.moneyString)
                 .multilineTextAlignment(.trailing)
                 .font(.title)
                 .padding(.trailing, 10)

@@ -12,7 +12,7 @@ struct CurrencyViewModel: Identifiable {
     private let exchangeRate: ExchangeRate
     
     var id: String {
-        name + rate + flagEmoji
+        name + String(rate) + flagEmoji
     }
     
     init(_ exchangeRate: ExchangeRate) {
@@ -23,8 +23,8 @@ struct CurrencyViewModel: Identifiable {
         exchangeRate.currency
     }
     
-    var rate: String {
-        String(exchangeRate.conversionRate)
+    var rate: Double {
+        exchangeRate.conversionRate
     }
     
     var flagEmoji: String {

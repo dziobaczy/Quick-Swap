@@ -9,10 +9,21 @@ import SwiftUI
 
 @main
 struct QuickSwapApp: App {
+    
+    @State private var userDetails = UserDetails()
+    
     var body: some Scene {
         WindowGroup {
-            CurrencyListView()
+            CurrencyListView().environmentObject(userDetails)
         }
+    }
+}
+
+class UserDetails: ObservableObject {
+    @Published var moneyString: String = "10.0"
+    
+    var money: Double {
+        (moneyString as NSString).doubleValue
     }
 }
 
