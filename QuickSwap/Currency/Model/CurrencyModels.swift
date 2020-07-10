@@ -11,6 +11,7 @@ typealias Currency = String
 
 struct CurrencyConversion: Decodable {
     var base: Currency
+    var date: Date
     
     var exchangeRates: [ExchangeRate] {
         rates.rates
@@ -54,5 +55,5 @@ extension ExchangeRate {
 }
 
 extension CurrencyConversion {
-    static let plnMock = CurrencyConversion(base: "PLN", rates: .init(rates: [.usdMock, .gbpMock]))
+    static let plnMock = CurrencyConversion(base: "PLN", date: Date(), rates: .init(rates: [.usdMock, .gbpMock]))
 }

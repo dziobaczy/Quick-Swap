@@ -34,7 +34,7 @@ final class CurrencyService: CurrencyProvider {
         return session.dataTaskPublisher(for: components(for: base).url!)
             .mapError { CurrencyServiceError.init(urlError: $0) }
             .map { $0.data }
-            .decode(type: CurrencyConversion.self, decoder: JSONDecoder())
+            .decode(type: CurrencyConversion.self, decoder: currencyDecoder())
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
@@ -48,4 +48,18 @@ final class CurrencyService: CurrencyProvider {
         return components
     }
     
+    private func currencyDecoder() -> JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(.exchangeratesApiDateFormat)
+        return decoder
+    }
+    
+}
+
+extension DateFormatter {
+    static let exchangeratesApiDateFormat: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-mm-dd"
+        return dateFormatter
+    }()
 }
