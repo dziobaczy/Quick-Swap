@@ -26,7 +26,8 @@ class CurrencyListViewModel: ObservableObject {
         }, receiveValue: { [weak self] currencyConversion in
             guard let self = self else { return }
             self.currencyHeaderViweModel = CurrencyHeaderViewModel(currencyConversion)
-            self.currencyViewModels = currencyConversion.exchangeRates.map(CurrencyViewModel.init)
+            
+            self.currencyViewModels = currencyConversion.exchangeRates.sorted().map(CurrencyViewModel.init)
         })
     }
     

@@ -26,6 +26,26 @@ struct ExchangeRate: Decodable, Hashable {
     let conversionRate: Double
 }
 
+extension ExchangeRate: Comparable {
+    
+    static func < (lhs: ExchangeRate, rhs: ExchangeRate) -> Bool {
+        if let leftFlag = String.flagDictionary[lhs.currency], let rightFlag = String.flagDictionary[rhs.currency] {
+            return leftFlag < rightFlag
+        } else if String.flagDictionary[lhs.currency] != nil {
+            return true
+        } else if String.flagDictionary[rhs.currency] != nil {
+            return false
+        } else {
+            return lhs.currency < rhs.currency
+        }
+    }
+    
+    static func == (lhs: ExchangeRate, rhs: ExchangeRate) -> Bool {
+        lhs.currency == rhs.currency
+    }
+    
+}
+
 extension ExchangeRate {
     struct List: Decodable {
         let rates: [ExchangeRate]

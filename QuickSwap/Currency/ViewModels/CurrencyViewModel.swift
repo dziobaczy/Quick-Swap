@@ -35,7 +35,7 @@ extension String {
         String.flagDictionary[country] ?? "🏳️"
     }
     
-    private static let flagDictionary: [String: String] = [
+    static let flagDictionary: [String: String] = [
         "CAD": "🇨🇦",
         "DKK": "🇩🇰",
         "GBP": "🇬🇧",
