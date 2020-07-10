@@ -14,10 +14,10 @@
 		8A95ECF824B6AADA000A2CC5 /* QuickSwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ECF724B6AADA000A2CC5 /* QuickSwapTests.swift */; };
 		8A95ED0324B6AADA000A2CC5 /* QuickSwapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED0224B6AADA000A2CC5 /* QuickSwapUITests.swift */; };
 		8A95ED1124B6AB08000A2CC5 /* CurrencySwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1024B6AB08000A2CC5 /* CurrencySwapView.swift */; };
-		8A95ED1424B6B35C000A2CC5 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1324B6B35C000A2CC5 /* Currency.swift */; };
 		8A95ED1624B88FD1000A2CC5 /* CurrencyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */; };
 		8A95ED1824B8A3A0000A2CC5 /* CurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1724B8A3A0000A2CC5 /* CurrencyListView.swift */; };
 		8A95ED1A24B8B37A000A2CC5 /* CurrencyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1924B8B37A000A2CC5 /* CurrencyHeaderView.swift */; };
+		8A95ED1D24B8B714000A2CC5 /* CurrencyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1C24B8B714000A2CC5 /* CurrencyModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +51,10 @@
 		8A95ED0224B6AADA000A2CC5 /* QuickSwapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSwapUITests.swift; sourceTree = "<group>"; };
 		8A95ED0424B6AADA000A2CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A95ED1024B6AB08000A2CC5 /* CurrencySwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySwapView.swift; sourceTree = "<group>"; };
-		8A95ED1324B6B35C000A2CC5 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRowView.swift; sourceTree = "<group>"; };
 		8A95ED1724B8A3A0000A2CC5 /* CurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListView.swift; sourceTree = "<group>"; };
 		8A95ED1924B8B37A000A2CC5 /* CurrencyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHeaderView.swift; sourceTree = "<group>"; };
+		8A95ED1C24B8B714000A2CC5 /* CurrencyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,13 +144,21 @@
 		8A95ED1224B6B34E000A2CC5 /* Currency */ = {
 			isa = PBXGroup;
 			children = (
+				8A95ED1B24B8B707000A2CC5 /* Model */,
 				8A95ED1024B6AB08000A2CC5 /* CurrencySwapView.swift */,
-				8A95ED1324B6B35C000A2CC5 /* Currency.swift */,
 				8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */,
 				8A95ED1724B8A3A0000A2CC5 /* CurrencyListView.swift */,
 				8A95ED1924B8B37A000A2CC5 /* CurrencyHeaderView.swift */,
 			);
 			path = Currency;
+			sourceTree = "<group>";
+		};
+		8A95ED1B24B8B707000A2CC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A95ED1C24B8B714000A2CC5 /* CurrencyModels.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,10 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A95ED1424B6B35C000A2CC5 /* Currency.swift in Sources */,
 				8A95ED1824B8A3A0000A2CC5 /* CurrencyListView.swift in Sources */,
 				8A95ED1624B88FD1000A2CC5 /* CurrencyRowView.swift in Sources */,
 				8A95ED1124B6AB08000A2CC5 /* CurrencySwapView.swift in Sources */,
+				8A95ED1D24B8B714000A2CC5 /* CurrencyModels.swift in Sources */,
 				8A95ECE824B6AAD8000A2CC5 /* ContentView.swift in Sources */,
 				8A95ECE624B6AAD8000A2CC5 /* QuickSwapApp.swift in Sources */,
 				8A95ED1A24B8B37A000A2CC5 /* CurrencyHeaderView.swift in Sources */,
