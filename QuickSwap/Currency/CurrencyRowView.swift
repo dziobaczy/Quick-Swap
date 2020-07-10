@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CurrencyRowView: View {
+    
+    @State var viewModel: CurrencyViewModel
+    
     var body: some View {
         HStack(alignment: .center) {
             Text("🇵🇱")
@@ -16,10 +19,10 @@ struct CurrencyRowView: View {
                 .background(Color.black.opacity(0.1))
                 .clipShape(Circle())
             VStack(alignment: .leading) {
-                Text("PLN")
+                Text(viewModel.name)
                     .font(.callout)
                     .bold()
-                Text("3.23128")
+                Text(viewModel.rate)
             }
             .padding(.vertical, 4)
             .padding(.leading, 8)
@@ -29,6 +32,6 @@ struct CurrencyRowView: View {
 
 struct CurrencyRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyRowView()
+        CurrencyRowView(viewModel: .init(.plnMock))
     }
 }

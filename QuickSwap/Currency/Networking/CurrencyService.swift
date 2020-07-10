@@ -8,7 +8,11 @@
 import Foundation
 import Combine
 
-final class CurrencyService {
+protocol CurrencyProvider: class {
+    func fetchCurrencies(for base: String) -> AnyPublisher<CurrencyConversion, Error>
+}
+
+final class CurrencyService: CurrencyProvider {
     
     private let session: URLSession
     
@@ -31,6 +35,7 @@ final class CurrencyService {
             .mapError { CurrencyServiceError.init(urlError: $0) }
             .map { $0.data }
             .decode(type: CurrencyConversion.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     

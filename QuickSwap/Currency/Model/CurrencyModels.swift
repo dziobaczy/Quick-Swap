@@ -10,22 +10,22 @@ import Foundation
 typealias Currency = String
 
 struct CurrencyConversion: Decodable {
-    var currency: Currency
+    var base: Currency
     
     var exchangeRates: [ExchangeRate] {
-        exchangeRatesList.rates
+        rates.rates
     }
     
-    private var exchangeRatesList: ExchangeRate.List
+    private var rates: ExchangeRate.List
 }
 
 
-struct ExchangeRate: Decodable {
+struct ExchangeRate: Decodable, Hashable {
     let currency: Currency
     let conversionRate: Double
 }
 
-private extension ExchangeRate {
+extension ExchangeRate {
     struct List: Decodable {
         let rates: [ExchangeRate]
         
@@ -38,5 +38,21 @@ private extension ExchangeRate {
             }
         }
         
+        init(rates: [ExchangeRate]) {
+            self.rates = rates
+        }
+        
     }
+}
+
+// MARK: - Mocks
+
+extension ExchangeRate {
+    static let plnMock = ExchangeRate(currency: "PLN", conversionRate: 2.13)
+    static let usdMock = ExchangeRate(currency: "USD", conversionRate: 3.14)
+    static let gbpMock = ExchangeRate(currency: "GBP", conversionRate: 4.15)
+}
+
+extension CurrencyConversion {
+    static let plnMock = CurrencyConversion(base: "PLN", rates: .init(rates: [.usdMock, .gbpMock]))
 }
