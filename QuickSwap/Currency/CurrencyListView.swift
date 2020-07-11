@@ -20,7 +20,7 @@ struct CurrencyListView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: CurrencyHeaderView(viewModel.currencyHeaderViweModel)) {
+                Section(header: CurrencyHeaderView(viewModel.currencyHeaderViewModel)) {
                     ForEach(viewModel.currencyViewModels) { viewModel in
                         CurrencyRowView(viewModel: viewModel)
                             .padding(.all, 12)

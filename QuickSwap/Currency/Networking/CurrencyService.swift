@@ -9,34 +9,65 @@ import Foundation
 import Combine
 
 protocol CurrencyProvider: class {
-    func fetchCurrencies(for base: String) -> AnyPublisher<CurrencyConversion, Error>
+    func fetchCurrencies(for base: String) -> Future<CurrencyConversion, CurrencyServiceError>
+}
+
+enum CurrencyServiceError: Error {
+    case invalidBase
+    case urlError
+    case deallocated
+    case conversionError
+    case decodingError
+    
+    init(urlError: URLError) {
+        print(urlError)
+        self = .urlError
+    }
 }
 
 final class CurrencyService: CurrencyProvider {
     
     private let session: URLSession
     
-    enum CurrencyServiceError: Error {
-        case invalidBase
-        case urlError
-        
-        init(urlError: URLError) {
-            print(urlError)
-            self = .urlError
-        }
-    }
-    
     init(session: URLSession = .shared) {
         self.session = session
     }
     
-    func fetchCurrencies(for base: String) -> AnyPublisher<CurrencyConversion, Error> {
-        return session.dataTaskPublisher(for: components(for: base).url!)
-            .mapError { CurrencyServiceError.init(urlError: $0) }
-            .map { $0.data }
-            .decode(type: CurrencyConversion.self, decoder: currencyDecoder())
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+    func fetchCurrencies(for base: String) -> Future<CurrencyConversion, CurrencyServiceError> {
+        return .init { [weak self] promise in
+            guard let self = self else {
+                promise(.failure(.deallocated))
+                return
+            }
+            
+            guard let url = self.components(for: base).url else {
+                promise(.failure(.invalidBase))
+                return
+            }
+            
+            self.session.dataTask(with: url) { data, response, error in
+                guard error == nil else {
+                    promise(.failure(.urlError))
+                    return
+                }
+                
+                guard let data = data else {
+                    promise(.failure(.conversionError))
+                    return
+                }
+                
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .formatted(.exchangeratesApiDateFormat)
+                    let currency = try decoder.decode(CurrencyConversion.self, from: data)
+                    promise(.success(currency))
+                } catch {
+                    promise(.failure(.decodingError))
+                }
+                
+            }.resume()
+            
+        }
     }
     
     private func components(for base: String) -> URLComponents {

@@ -5,6 +5,7 @@
 //  Created by Piotr Szadkowski on 10/07/2020.
 //
 
+import Foundation
 import Combine
 
 class CurrencyListViewModel: ObservableObject {
@@ -12,7 +13,7 @@ class CurrencyListViewModel: ObservableObject {
     private let currencyProvider: CurrencyProvider
     
     @Published var currencyViewModels = [CurrencyViewModel]()
-    @Published var currencyHeaderViweModel: CurrencyHeaderRepresentable = LoadingCurrency()
+    @Published var currencyHeaderViewModel: CurrencyHeaderRepresentable = LoadingCurrency()
     
     init(currencyProvider: CurrencyProvider = CurrencyService()) {
         self.currencyProvider = currencyProvider
@@ -21,17 +22,20 @@ class CurrencyListViewModel: ObservableObject {
     var cancellable: AnyCancellable?
     
     func fetchCurrencies(for currency: Currency = "PLN") {
-        cancellable = currencyProvider.fetchCurrencies(for: currency.uppercased()).sink(receiveCompletion: { completion in
-            print(completion)
-        }, receiveValue: { [weak self] currencyConversion in
-            guard let self = self else { return }
-            self.currencyHeaderViweModel = CurrencyHeaderViewModel(currencyConversion)
-            self.currencyViewModels = currencyConversion.exchangeRates.sorted().map(CurrencyViewModel.init)
-        })
+        cancellable = currencyProvider
+            .fetchCurrencies(for: currency.uppercased())
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { error in
+                print(error)
+            }, receiveValue: { [weak self] conversion in
+                guard let self = self else { return }
+                self.currencyHeaderViewModel = CurrencyHeaderViewModel(conversion)
+                self.currencyViewModels = conversion.exchangeRates.sorted().map(CurrencyViewModel.init)
+            })
     }
     
     func changeHeader(to viewModel: CurrencyViewModel) {
-        currencyHeaderViweModel = LoadingCurrency()
+        currencyHeaderViewModel = LoadingCurrency()
         fetchCurrencies(for: viewModel.name)
     }
     
