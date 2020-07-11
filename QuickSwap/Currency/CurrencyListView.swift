@@ -23,6 +23,7 @@ struct CurrencyListView: View {
                 Section(header: CurrencyHeaderView(viewModel.currencyHeaderViewModel)) {
                     ForEach(viewModel.currencyViewModels) { viewModel in
                         CurrencyRowView(viewModel: viewModel)
+                            .frame(maxWidth: .infinity)
                             .padding(.all, 12)
                             .onTapGesture {
                                 self.viewModel.changeHeader(to: viewModel)
@@ -42,6 +43,6 @@ struct CurrencyListView: View {
 
 struct CurrencyListView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyListView()
+        CurrencyListView().environmentObject(UserDetails.mock)
     }
 }

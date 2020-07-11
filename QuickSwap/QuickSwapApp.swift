@@ -19,14 +19,6 @@ struct QuickSwapApp: App {
     }
 }
 
-class UserDetails: ObservableObject {
-    @Published var moneyString: String = "10.0"
-    
-    var money: Double {
-        (moneyString as NSString).doubleValue
-    }
-}
-
 struct QuickSwapApp_Previews: PreviewProvider {
     static var previews: some View {
         CurrencyListView()

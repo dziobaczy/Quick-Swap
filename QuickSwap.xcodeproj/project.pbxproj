@@ -22,6 +22,7 @@
 		8A95ED2324B90282000A2CC5 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2224B90282000A2CC5 /* CurrencyViewModel.swift */; };
 		8A95ED2524B9029B000A2CC5 /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2424B9029B000A2CC5 /* CurrencyListViewModel.swift */; };
 		8A95ED2724B90C11000A2CC5 /* CurrencyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2624B90C11000A2CC5 /* CurrencyHeaderViewModel.swift */; };
+		8A95ED2A24B93F84000A2CC5 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2924B93F84000A2CC5 /* UserDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		8A95ED2224B90282000A2CC5 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		8A95ED2424B9029B000A2CC5 /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
 		8A95ED2624B90C11000A2CC5 /* CurrencyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHeaderViewModel.swift; sourceTree = "<group>"; };
+		8A95ED2924B93F84000A2CC5 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		8A95ECE424B6AAD8000A2CC5 /* QuickSwap */ = {
 			isa = PBXGroup;
 			children = (
+				8A95ED2824B93F75000A2CC5 /* User */,
 				8A95ED1224B6B34E000A2CC5 /* Currency */,
 				8A95ECE524B6AAD8000A2CC5 /* QuickSwapApp.swift */,
 				8A95ECE724B6AAD8000A2CC5 /* ContentView.swift */,
@@ -187,6 +190,14 @@
 				8A95ED2624B90C11000A2CC5 /* CurrencyHeaderViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8A95ED2824B93F75000A2CC5 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8A95ED2924B93F84000A2CC5 /* UserDetails.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +334,7 @@
 				8A95ED1124B6AB08000A2CC5 /* CurrencySwapView.swift in Sources */,
 				8A95ED1D24B8B714000A2CC5 /* CurrencyModels.swift in Sources */,
 				8A95ED2024B8BAE6000A2CC5 /* CurrencyService.swift in Sources */,
+				8A95ED2A24B93F84000A2CC5 /* UserDetails.swift in Sources */,
 				8A95ECE824B6AAD8000A2CC5 /* ContentView.swift in Sources */,
 				8A95ED2724B90C11000A2CC5 /* CurrencyHeaderViewModel.swift in Sources */,
 				8A95ECE624B6AAD8000A2CC5 /* QuickSwapApp.swift in Sources */,
