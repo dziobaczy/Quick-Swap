@@ -32,6 +32,9 @@
 		8A95ED4024BB0B69000A2CC5 /* QuickSwap-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A95ED2F24BB0B67000A2CC5 /* QuickSwap-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8A95ED4524BB0BD1000A2CC5 /* CurrencyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1C24B8B714000A2CC5 /* CurrencyModels.swift */; };
 		8A95ED4624BB0CAC000A2CC5 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1F24B8BAE6000A2CC5 /* CurrencyService.swift */; };
+		8A95ED4724BB14FD000A2CC5 /* CurrencyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */; };
+		8A95ED4824BB151E000A2CC5 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2224B90282000A2CC5 /* CurrencyViewModel.swift */; };
+		8A95ED4924BB1524000A2CC5 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2924B93F84000A2CC5 /* UserDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -466,8 +469,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A95ED4624BB0CAC000A2CC5 /* CurrencyService.swift in Sources */,
+				8A95ED4824BB151E000A2CC5 /* CurrencyViewModel.swift in Sources */,
 				8A95ED3724BB0B67000A2CC5 /* QuickSwap_Widget.swift in Sources */,
 				8A95ED4524BB0BD1000A2CC5 /* CurrencyModels.swift in Sources */,
+				8A95ED4924BB1524000A2CC5 /* UserDetails.swift in Sources */,
+				8A95ED4724BB14FD000A2CC5 /* CurrencyRowView.swift in Sources */,
 				8A95ED3C24BB0B69000A2CC5 /* QuickSwap_Widget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

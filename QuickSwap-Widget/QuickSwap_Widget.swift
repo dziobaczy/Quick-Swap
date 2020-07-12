@@ -53,7 +53,10 @@ struct CurrencyEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack {
+            CurrencyRowView(viewModel: .init(entry.currency.exchangeRates[0]))
+            CurrencyRowView(viewModel: .init(entry.currency.exchangeRates[1]))
+        }
     }
 }
 
@@ -67,6 +70,7 @@ struct QuickSwap_Widget: Widget {
                             placeholder: CurrencyPlaceholderView(),
                             content: { entry in
                                 CurrencyEntryView(entry: entry)
+                                    .environmentObject(UserDetails())
                             })
         .configurationDisplayName("Currency Widget")
         .description("Show your favourite currency")
@@ -75,6 +79,6 @@ struct QuickSwap_Widget: Widget {
 
 struct QuickSwap_Widget_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        CurrencyEntryView(entry: .init(date: Date(), currency: .plnMock))
     }
 }
