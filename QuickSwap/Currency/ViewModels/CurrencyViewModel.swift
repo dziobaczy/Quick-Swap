@@ -32,20 +32,3 @@ struct CurrencyViewModel: Identifiable {
     }
     
 }
-
-extension String {
-    
-    static func emojiFlag(for country: String) -> String {
-        String.flagDictionary[country] ?? "🏳️"
-    }
-    
-    static let flagDictionary: [String: String] = [
-        "CAD": "🇨🇦",
-        "DKK": "🇩🇰",
-        "GBP": "🇬🇧",
-        "CHF": "🇨🇭",
-        "USD": "🇺🇸",
-        "MXN": "🇲🇽",
-        "PLN": "🇵🇱"
-    ]
-}

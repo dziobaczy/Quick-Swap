@@ -77,3 +77,22 @@ extension ExchangeRate {
 extension CurrencyConversion {
     static let plnMock = CurrencyConversion(base: "PLN", date: Date(), rates: .init(rates: [.usdMock, .gbpMock]))
 }
+
+// MARK: - Helper Extension
+
+extension String {
+    
+    static func emojiFlag(for country: String) -> String {
+        String.flagDictionary[country] ?? "🏳️"
+    }
+    
+    static let flagDictionary: [String: String] = [
+        "CAD": "🇨🇦",
+        "DKK": "🇩🇰",
+        "GBP": "🇬🇧",
+        "CHF": "🇨🇭",
+        "USD": "🇺🇸",
+        "MXN": "🇲🇽",
+        "PLN": "🇵🇱"
+    ]
+}

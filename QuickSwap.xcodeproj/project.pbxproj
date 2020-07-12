@@ -23,6 +23,15 @@
 		8A95ED2524B9029B000A2CC5 /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2424B9029B000A2CC5 /* CurrencyListViewModel.swift */; };
 		8A95ED2724B90C11000A2CC5 /* CurrencyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2624B90C11000A2CC5 /* CurrencyHeaderViewModel.swift */; };
 		8A95ED2A24B93F84000A2CC5 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2924B93F84000A2CC5 /* UserDetails.swift */; };
+		8A95ED3224BB0B67000A2CC5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A95ED3124BB0B67000A2CC5 /* WidgetKit.framework */; };
+		8A95ED3424BB0B67000A2CC5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A95ED3324BB0B67000A2CC5 /* SwiftUI.framework */; };
+		8A95ED3724BB0B67000A2CC5 /* QuickSwap_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED3624BB0B67000A2CC5 /* QuickSwap_Widget.swift */; };
+		8A95ED3A24BB0B69000A2CC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A95ED3924BB0B69000A2CC5 /* Assets.xcassets */; };
+		8A95ED3C24BB0B69000A2CC5 /* QuickSwap_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED3824BB0B67000A2CC5 /* QuickSwap_Widget.intentdefinition */; };
+		8A95ED3D24BB0B69000A2CC5 /* QuickSwap_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED3824BB0B67000A2CC5 /* QuickSwap_Widget.intentdefinition */; };
+		8A95ED4024BB0B69000A2CC5 /* QuickSwap-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A95ED2F24BB0B67000A2CC5 /* QuickSwap-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8A95ED4524BB0BD1000A2CC5 /* CurrencyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1C24B8B714000A2CC5 /* CurrencyModels.swift */; };
+		8A95ED4624BB0CAC000A2CC5 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1F24B8BAE6000A2CC5 /* CurrencyService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +49,28 @@
 			remoteGlobalIDString = 8A95ECE124B6AAD8000A2CC5;
 			remoteInfo = QuickSwap;
 		};
+		8A95ED3E24BB0B69000A2CC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A95ECDA24B6AAD8000A2CC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A95ED2E24BB0B67000A2CC5;
+			remoteInfo = "QuickSwap-WidgetExtension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A95ED4424BB0B69000A2CC5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8A95ED4024BB0B69000A2CC5 /* QuickSwap-WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8A95ECE224B6AAD8000A2CC5 /* QuickSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +95,13 @@
 		8A95ED2424B9029B000A2CC5 /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
 		8A95ED2624B90C11000A2CC5 /* CurrencyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHeaderViewModel.swift; sourceTree = "<group>"; };
 		8A95ED2924B93F84000A2CC5 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		8A95ED2F24BB0B67000A2CC5 /* QuickSwap-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "QuickSwap-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A95ED3124BB0B67000A2CC5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		8A95ED3324BB0B67000A2CC5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		8A95ED3624BB0B67000A2CC5 /* QuickSwap_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSwap_Widget.swift; sourceTree = "<group>"; };
+		8A95ED3824BB0B67000A2CC5 /* QuickSwap_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = QuickSwap_Widget.intentdefinition; sourceTree = "<group>"; };
+		8A95ED3924BB0B69000A2CC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A95ED3B24BB0B69000A2CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +126,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A95ED2C24BB0B67000A2CC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A95ED3424BB0B67000A2CC5 /* SwiftUI.framework in Frameworks */,
+				8A95ED3224BB0B67000A2CC5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,6 +144,8 @@
 				8A95ECE424B6AAD8000A2CC5 /* QuickSwap */,
 				8A95ECF624B6AADA000A2CC5 /* QuickSwapTests */,
 				8A95ED0124B6AADA000A2CC5 /* QuickSwapUITests */,
+				8A95ED3524BB0B67000A2CC5 /* QuickSwap-Widget */,
+				8A95ED3024BB0B67000A2CC5 /* Frameworks */,
 				8A95ECE324B6AAD8000A2CC5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +156,7 @@
 				8A95ECE224B6AAD8000A2CC5 /* QuickSwap.app */,
 				8A95ECF324B6AADA000A2CC5 /* QuickSwapTests.xctest */,
 				8A95ECFE24B6AADA000A2CC5 /* QuickSwapUITests.xctest */,
+				8A95ED2F24BB0B67000A2CC5 /* QuickSwap-WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +249,26 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		8A95ED3024BB0B67000A2CC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A95ED3124BB0B67000A2CC5 /* WidgetKit.framework */,
+				8A95ED3324BB0B67000A2CC5 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A95ED3524BB0B67000A2CC5 /* QuickSwap-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				8A95ED3624BB0B67000A2CC5 /* QuickSwap_Widget.swift */,
+				8A95ED3824BB0B67000A2CC5 /* QuickSwap_Widget.intentdefinition */,
+				8A95ED3924BB0B69000A2CC5 /* Assets.xcassets */,
+				8A95ED3B24BB0B69000A2CC5 /* Info.plist */,
+			);
+			path = "QuickSwap-Widget";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,10 +279,12 @@
 				8A95ECDE24B6AAD8000A2CC5 /* Sources */,
 				8A95ECDF24B6AAD8000A2CC5 /* Frameworks */,
 				8A95ECE024B6AAD8000A2CC5 /* Resources */,
+				8A95ED4424BB0B69000A2CC5 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8A95ED3F24BB0B69000A2CC5 /* PBXTargetDependency */,
 			);
 			name = QuickSwap;
 			productName = QuickSwap;
@@ -256,6 +327,23 @@
 			productReference = 8A95ECFE24B6AADA000A2CC5 /* QuickSwapUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8A95ED2E24BB0B67000A2CC5 /* QuickSwap-WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A95ED4124BB0B69000A2CC5 /* Build configuration list for PBXNativeTarget "QuickSwap-WidgetExtension" */;
+			buildPhases = (
+				8A95ED2B24BB0B67000A2CC5 /* Sources */,
+				8A95ED2C24BB0B67000A2CC5 /* Frameworks */,
+				8A95ED2D24BB0B67000A2CC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QuickSwap-WidgetExtension";
+			productName = "QuickSwap-WidgetExtension";
+			productReference = 8A95ED2F24BB0B67000A2CC5 /* QuickSwap-WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -276,6 +364,9 @@
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = 8A95ECE124B6AAD8000A2CC5;
 					};
+					8A95ED2E24BB0B67000A2CC5 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 				};
 			};
 			buildConfigurationList = 8A95ECDD24B6AAD8000A2CC5 /* Build configuration list for PBXProject "QuickSwap" */;
@@ -294,6 +385,7 @@
 				8A95ECE124B6AAD8000A2CC5 /* QuickSwap */,
 				8A95ECF224B6AADA000A2CC5 /* QuickSwapTests */,
 				8A95ECFD24B6AADA000A2CC5 /* QuickSwapUITests */,
+				8A95ED2E24BB0B67000A2CC5 /* QuickSwap-WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -322,6 +414,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A95ED2D24BB0B67000A2CC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A95ED3A24BB0B69000A2CC5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -333,6 +433,7 @@
 				8A95ED1624B88FD1000A2CC5 /* CurrencyRowView.swift in Sources */,
 				8A95ED1124B6AB08000A2CC5 /* CurrencySwapView.swift in Sources */,
 				8A95ED1D24B8B714000A2CC5 /* CurrencyModels.swift in Sources */,
+				8A95ED3D24BB0B69000A2CC5 /* QuickSwap_Widget.intentdefinition in Sources */,
 				8A95ED2024B8BAE6000A2CC5 /* CurrencyService.swift in Sources */,
 				8A95ED2A24B93F84000A2CC5 /* UserDetails.swift in Sources */,
 				8A95ECE824B6AAD8000A2CC5 /* ContentView.swift in Sources */,
@@ -360,6 +461,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8A95ED2B24BB0B67000A2CC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A95ED4624BB0CAC000A2CC5 /* CurrencyService.swift in Sources */,
+				8A95ED3724BB0B67000A2CC5 /* QuickSwap_Widget.swift in Sources */,
+				8A95ED4524BB0BD1000A2CC5 /* CurrencyModels.swift in Sources */,
+				8A95ED3C24BB0B69000A2CC5 /* QuickSwap_Widget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -372,6 +484,11 @@
 			isa = PBXTargetDependency;
 			target = 8A95ECE124B6AAD8000A2CC5 /* QuickSwap */;
 			targetProxy = 8A95ECFF24B6AADA000A2CC5 /* PBXContainerItemProxy */;
+		};
+		8A95ED3F24BB0B69000A2CC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A95ED2E24BB0B67000A2CC5 /* QuickSwap-WidgetExtension */;
+			targetProxy = 8A95ED3E24BB0B69000A2CC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -495,6 +612,7 @@
 		8A95ED0824B6AADA000A2CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -517,6 +635,7 @@
 		8A95ED0924B6AADA000A2CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -620,6 +739,48 @@
 			};
 			name = Release;
 		};
+		8A95ED4224BB0B69000A2CC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4YYLH3ST;
+				INFOPLIST_FILE = "QuickSwap-Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.offthecode.QuickSwap.QuickSwap-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A95ED4324BB0B69000A2CC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DN4YYLH3ST;
+				INFOPLIST_FILE = "QuickSwap-Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.offthecode.QuickSwap.QuickSwap-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -655,6 +816,15 @@
 			buildConfigurations = (
 				8A95ED0E24B6AADA000A2CC5 /* Debug */,
 				8A95ED0F24B6AADA000A2CC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A95ED4124BB0B69000A2CC5 /* Build configuration list for PBXNativeTarget "QuickSwap-WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A95ED4224BB0B69000A2CC5 /* Debug */,
+				8A95ED4324BB0B69000A2CC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

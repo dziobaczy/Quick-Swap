@@ -87,6 +87,17 @@ final class CurrencyService: CurrencyProvider {
     
 }
 
+final class CurrencyServiceFake: CurrencyProvider {
+    
+    var isSuccessfull: Bool = true
+    
+    func fetchCurrencies(for base: String) -> Future<CurrencyConversion, CurrencyServiceError> {
+        return .init { [unowned self] promise in
+            self.isSuccessfull ? promise(.success(.plnMock)) : promise(.failure(.conversionError))
+        }
+    }
+}
+
 extension DateFormatter {
     static let exchangeratesApiDateFormat: DateFormatter = {
         let dateFormatter = DateFormatter()
