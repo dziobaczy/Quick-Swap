@@ -55,6 +55,7 @@ struct CurrencyEntryView : View {
     var body: some View {
         VStack {
             CurrencyRowView(viewModel: .init(entry.currency.exchangeRates[0]))
+            Spacer()
             CurrencyRowView(viewModel: .init(entry.currency.exchangeRates[1]))
         }
     }
