@@ -11,7 +11,7 @@ import Combine
 class UserDetails: ObservableObject {
     @Published var moneyString: String
     
-    init(_ initialMoney: String = "10.0") {
+    init(initialMoney: String = "10.0") {
         self.moneyString = initialMoney
     }
     

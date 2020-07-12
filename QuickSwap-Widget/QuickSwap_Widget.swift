@@ -71,7 +71,7 @@ struct QuickSwap_Widget: Widget {
                             placeholder: CurrencyPlaceholderView(),
                             content: { entry in
                                 CurrencyEntryView(entry: entry)
-                                    .environmentObject(UserDetails())
+                                    .environmentObject(UserDetails(initialMoney: "1"))
                             })
         .configurationDisplayName("Currency Widget")
         .description("Show your favourite currency")
