@@ -14,7 +14,12 @@ struct CurrencyConversion: Decodable {
     var date: Date
     
     var exchangeRates: [ExchangeRate] {
-        rates.rates
+        get {
+            rates.rates
+        }
+        set {
+            rates = ExchangeRate.List(rates: newValue)
+        }
     }
     
     private var rates: ExchangeRate.List
@@ -69,13 +74,13 @@ extension ExchangeRate {
 // MARK: - Mocks
 
 extension ExchangeRate {
-    static let plnMock = ExchangeRate(currency: "PLN", conversionRate: 2.13)
+    static let plnMock = ExchangeRate(currency: "PLN", conversionRate: 1.00)
     static let usdMock = ExchangeRate(currency: "USD", conversionRate: 3.14)
     static let gbpMock = ExchangeRate(currency: "GBP", conversionRate: 4.15)
 }
 
 extension CurrencyConversion {
-    static let plnMock = CurrencyConversion(base: "PLN", date: Date(), rates: .init(rates: [.usdMock, .gbpMock]))
+    static let plnMock = CurrencyConversion(base: "PLN", date: Date(), rates: .init(rates: [.usdMock, .gbpMock, .plnMock]))
 }
 
 // MARK: - Helper Extension

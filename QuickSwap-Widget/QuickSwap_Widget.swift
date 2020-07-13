@@ -12,7 +12,7 @@ import Combine
 
 struct CurrencyEntry: TimelineEntry {
     let date: Date
-    let currency: CurrencyConversion
+    var currency: CurrencyConversion
 }
 
 struct Provider: TimelineProvider {
@@ -43,6 +43,50 @@ struct Provider: TimelineProvider {
     
 }
 
+struct DynamicProvider: IntentTimelineProvider {
+
+    let provider: CurrencyProvider
+
+    init(provider: CurrencyProvider = CurrencyService()) {
+        self.provider = provider
+    }
+
+    func snapshot(for configuration: CurrencySelectionIntent, with context: Context, completion: @escaping (CurrencyEntry) -> ()) {
+        let entry = CurrencyEntry(date: Date(), currency: .plnMock)
+        completion(entry)
+    }
+
+    func timeline(for configuration: CurrencySelectionIntent, with context: Context, completion: @escaping (Timeline<CurrencyEntry>) -> ()) {
+        print(configuration.parameter)
+        _ = provider.fetchCurrencies(for: "PLN")
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { error in
+                print(error)
+            }, receiveValue: { conversion in
+                var entries = CurrencyEntry(date: conversion.date, currency: conversion)
+                setOreder(for: configuration, withConversion: &entries.currency)
+                let timeline = Timeline(entries: [entries], policy: .atEnd)
+                completion(timeline)
+            })
+    }
+    
+    private func setOreder(for configuration: CurrencySelectionIntent, withConversion conversion: inout CurrencyConversion) {
+        switch configuration.parameter {
+        case .pLN:
+            if let index = conversion.exchangeRates.firstIndex(where: { $0.currency == "PLN" }) {
+                conversion.exchangeRates.swapAt(index, 0)
+            }
+        case .uSD:
+            if let index = conversion.exchangeRates.firstIndex(where: { $0.currency == "USD" }) {
+                conversion.exchangeRates.swapAt(index, 0)
+            }
+        case .unknown:
+            print("...")
+        }
+    }
+
+}
+
 struct CurrencyPlaceholderView : View {
     var body: some View {
         Text("Placeholder View")
@@ -66,8 +110,8 @@ struct QuickSwap_Widget: Widget {
     private let kind: String = "QuickSwap_Widget"
 
     public var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind,
-                            provider: Provider(provider: CurrencyServiceFake()),
+        IntentConfiguration(kind: kind, intent: CurrencySelectionIntent.self,
+                            provider: DynamicProvider(provider: CurrencyServiceFake()),
                             placeholder: CurrencyPlaceholderView(),
                             content: { entry in
                                 CurrencyEntryView(entry: entry)
@@ -83,3 +127,18 @@ struct QuickSwap_Widget_Previews: PreviewProvider {
         CurrencyEntryView(entry: .init(date: Date(), currency: .plnMock))
     }
 }
+
+
+// MARK: - Static Configuration
+
+//public var body: some WidgetConfiguration {
+//    StaticConfiguration(kind: kind,
+//                        provider: Provider(provider: CurrencyServiceFake()),
+//                        placeholder: CurrencyPlaceholderView(),
+//                        content: { entry in
+//                            CurrencyEntryView(entry: entry)
+//                                .environmentObject(UserDetails(initialMoney: "1"))
+//                        })
+//    .configurationDisplayName("Currency Widget")
+//    .description("Show your favourite currency")
+//}

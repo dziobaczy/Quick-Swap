@@ -27,14 +27,14 @@
 		8A95ED3424BB0B67000A2CC5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A95ED3324BB0B67000A2CC5 /* SwiftUI.framework */; };
 		8A95ED3724BB0B67000A2CC5 /* QuickSwap_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED3624BB0B67000A2CC5 /* QuickSwap_Widget.swift */; };
 		8A95ED3A24BB0B69000A2CC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A95ED3924BB0B69000A2CC5 /* Assets.xcassets */; };
-		8A95ED3C24BB0B69000A2CC5 /* QuickSwap_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED3824BB0B67000A2CC5 /* QuickSwap_Widget.intentdefinition */; };
-		8A95ED3D24BB0B69000A2CC5 /* QuickSwap_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED3824BB0B67000A2CC5 /* QuickSwap_Widget.intentdefinition */; };
 		8A95ED4024BB0B69000A2CC5 /* QuickSwap-WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A95ED2F24BB0B67000A2CC5 /* QuickSwap-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8A95ED4524BB0BD1000A2CC5 /* CurrencyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1C24B8B714000A2CC5 /* CurrencyModels.swift */; };
 		8A95ED4624BB0CAC000A2CC5 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1F24B8BAE6000A2CC5 /* CurrencyService.swift */; };
 		8A95ED4724BB14FD000A2CC5 /* CurrencyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED1524B88FD1000A2CC5 /* CurrencyRowView.swift */; };
 		8A95ED4824BB151E000A2CC5 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2224B90282000A2CC5 /* CurrencyViewModel.swift */; };
 		8A95ED4924BB1524000A2CC5 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A95ED2924B93F84000A2CC5 /* UserDetails.swift */; };
+		8AAF45ED24BD051100E85BD2 /* CurrencySelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF45EC24BD051100E85BD2 /* CurrencySelection.intentdefinition */; };
+		8AAF45EE24BD051100E85BD2 /* CurrencySelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF45EC24BD051100E85BD2 /* CurrencySelection.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,9 +102,9 @@
 		8A95ED3124BB0B67000A2CC5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		8A95ED3324BB0B67000A2CC5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		8A95ED3624BB0B67000A2CC5 /* QuickSwap_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSwap_Widget.swift; sourceTree = "<group>"; };
-		8A95ED3824BB0B67000A2CC5 /* QuickSwap_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = QuickSwap_Widget.intentdefinition; sourceTree = "<group>"; };
 		8A95ED3924BB0B69000A2CC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A95ED3B24BB0B69000A2CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AAF45EC24BD051100E85BD2 /* CurrencySelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = CurrencySelection.intentdefinition; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,8 +264,8 @@
 		8A95ED3524BB0B67000A2CC5 /* QuickSwap-Widget */ = {
 			isa = PBXGroup;
 			children = (
+				8AAF45EC24BD051100E85BD2 /* CurrencySelection.intentdefinition */,
 				8A95ED3624BB0B67000A2CC5 /* QuickSwap_Widget.swift */,
-				8A95ED3824BB0B67000A2CC5 /* QuickSwap_Widget.intentdefinition */,
 				8A95ED3924BB0B69000A2CC5 /* Assets.xcassets */,
 				8A95ED3B24BB0B69000A2CC5 /* Info.plist */,
 			);
@@ -436,8 +436,8 @@
 				8A95ED1624B88FD1000A2CC5 /* CurrencyRowView.swift in Sources */,
 				8A95ED1124B6AB08000A2CC5 /* CurrencySwapView.swift in Sources */,
 				8A95ED1D24B8B714000A2CC5 /* CurrencyModels.swift in Sources */,
-				8A95ED3D24BB0B69000A2CC5 /* QuickSwap_Widget.intentdefinition in Sources */,
 				8A95ED2024B8BAE6000A2CC5 /* CurrencyService.swift in Sources */,
+				8AAF45ED24BD051100E85BD2 /* CurrencySelection.intentdefinition in Sources */,
 				8A95ED2A24B93F84000A2CC5 /* UserDetails.swift in Sources */,
 				8A95ECE824B6AAD8000A2CC5 /* ContentView.swift in Sources */,
 				8A95ED2724B90C11000A2CC5 /* CurrencyHeaderViewModel.swift in Sources */,
@@ -474,7 +474,7 @@
 				8A95ED4524BB0BD1000A2CC5 /* CurrencyModels.swift in Sources */,
 				8A95ED4924BB1524000A2CC5 /* UserDetails.swift in Sources */,
 				8A95ED4724BB14FD000A2CC5 /* CurrencyRowView.swift in Sources */,
-				8A95ED3C24BB0B69000A2CC5 /* QuickSwap_Widget.intentdefinition in Sources */,
+				8AAF45EE24BD051100E85BD2 /* CurrencySelection.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +626,7 @@
 				DEVELOPMENT_TEAM = DN4YYLH3ST;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QuickSwap/Info.plist;
+				INTENTS_CODEGEN_LANGUAGE = Swift;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -649,6 +650,7 @@
 				DEVELOPMENT_TEAM = DN4YYLH3ST;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QuickSwap/Info.plist;
+				INTENTS_CODEGEN_LANGUAGE = Swift;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
