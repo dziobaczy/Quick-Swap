@@ -31,7 +31,7 @@ struct CurrencyRowView: View {
             Spacer()
         }
         .padding(.all, 10)
-        .background(Color.white)
+        .background(Color(.systemBackground))
         .cornerRadius(10)
         .shadow(color: Color(UIColor.black.withAlphaComponent(0.1)), radius: 3, x: 0, y: 3)
     }
@@ -39,6 +39,11 @@ struct CurrencyRowView: View {
 
 struct CurrencyRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrencyRowView(viewModel: .init(.plnMock)).environmentObject(UserDetails.mock)
+        Group {
+            CurrencyRowView(viewModel: .init(.plnMock)).environmentObject(UserDetails.mock)
+            CurrencyRowView(viewModel: .init(.plnMock))
+                .environmentObject(UserDetails.mock)
+                .environment(\.colorScheme, .dark)
+        }
     }
 }
