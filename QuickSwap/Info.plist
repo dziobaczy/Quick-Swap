@@ -23,6 +23,8 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>CurrencySelectionIntent</string>
+		<string>DynamicCurrencySelectionIntent</string>
+		<string>IntentIntent</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

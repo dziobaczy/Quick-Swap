@@ -44,6 +44,8 @@ struct Provider: TimelineProvider {
 }
 
 struct DynamicProvider: IntentTimelineProvider {
+    typealias Intent = DynamicCurrencySelectionIntent
+    
 
     let provider: CurrencyProvider
 
@@ -51,37 +53,28 @@ struct DynamicProvider: IntentTimelineProvider {
         self.provider = provider
     }
 
-    func snapshot(for configuration: CurrencySelectionIntent, with context: Context, completion: @escaping (CurrencyEntry) -> ()) {
+    func snapshot(for configuration: DynamicCurrencySelectionIntent, with context: Context, completion: @escaping (CurrencyEntry) -> ()) {
         let entry = CurrencyEntry(date: Date(), currency: .plnMock)
         completion(entry)
     }
 
-    func timeline(for configuration: CurrencySelectionIntent, with context: Context, completion: @escaping (Timeline<CurrencyEntry>) -> ()) {
-        print(configuration.parameter)
+    func timeline(for configuration: DynamicCurrencySelectionIntent, with context: Context, completion: @escaping (Timeline<CurrencyEntry>) -> ()) {
         _ = provider.fetchCurrencies(for: "PLN")
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { error in
                 print(error)
             }, receiveValue: { conversion in
                 var entries = CurrencyEntry(date: conversion.date, currency: conversion)
-                setOreder(for: configuration, withConversion: &entries.currency)
+//                setOreder(for: configuration, withConversion: &entries.currency)
+                setOrder(for: configuration.currency?.identifier ?? "", withConversion: &entries.currency)
                 let timeline = Timeline(entries: [entries], policy: .atEnd)
                 completion(timeline)
             })
     }
     
-    private func setOreder(for configuration: CurrencySelectionIntent, withConversion conversion: inout CurrencyConversion) {
-        switch configuration.parameter {
-        case .pLN:
-            if let index = conversion.exchangeRates.firstIndex(where: { $0.currency == "PLN" }) {
-                conversion.exchangeRates.swapAt(index, 0)
-            }
-        case .uSD:
-            if let index = conversion.exchangeRates.firstIndex(where: { $0.currency == "USD" }) {
-                conversion.exchangeRates.swapAt(index, 0)
-            }
-        case .unknown:
-            print("...")
+    private func setOrder(for identifier: String, withConversion conversion: inout CurrencyConversion) {
+        if let index = conversion.exchangeRates.firstIndex(where: { $0.currency == identifier }) {
+            conversion.exchangeRates.swapAt(index, 0)
         }
     }
 
@@ -110,7 +103,7 @@ struct QuickSwap_Widget: Widget {
     private let kind: String = "QuickSwap_Widget"
 
     public var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: CurrencySelectionIntent.self,
+        IntentConfiguration(kind: kind, intent: DynamicCurrencySelectionIntent.self,
                             provider: DynamicProvider(provider: CurrencyServiceFake()),
                             placeholder: CurrencyPlaceholderView(),
                             content: { entry in
