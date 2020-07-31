@@ -11,4 +11,4 @@ App allows you to dynamicly change your money amount, and by tapping other curre
 ![App Currencies screen - screenshoot](https://i.imgur.com/HgF2XqJ.png)
 ## Widgets 🎛
 
-![Small Widget screenshot](https://imgur.com/a/MRMX0Yb)
+![Small Widget screenshot](https://i.imgur.com/Ve6lxRX.png)
