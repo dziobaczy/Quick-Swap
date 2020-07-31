@@ -10,7 +10,6 @@ import Intents
 class IntentHandler: INExtension, DynamicCurrencySelectionIntentHandling {
     
     func provideCurrencyOptionsCollection(for intent: DynamicCurrencySelectionIntent, with completion: @escaping (INObjectCollection<DynamicCurrency>?, Error?) -> Void) {
-        print(intent.currency?.identifier)
 
         let remoteCurrencies = ["GBP", "CAD"].map { countryCode in
             return DynamicCurrency(identifier: countryCode, display: countryCode)

@@ -118,6 +118,7 @@ struct QuickSwap_Widget: Widget {
 struct QuickSwap_Widget_Previews: PreviewProvider {
     static var previews: some View {
         CurrencyEntryView(entry: .init(date: Date(), currency: .plnMock))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
 
